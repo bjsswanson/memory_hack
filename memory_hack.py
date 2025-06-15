@@ -2,7 +2,6 @@ from pathlib import Path
 import os
 import falcon
 
-from falcon_multipart.middleware import MultipartMiddleware
 from app import ScriptResource, SearchResource, MainResource, AOBResource, InfoResource, CodeListResource
 from app.main import initialize
 from app.helpers.data_store import DataStore
@@ -15,7 +14,7 @@ class NoLoggingWSGIRequestHandler(WSGIRequestHandler):
 if __name__ == '__main__':
     pt = Path(__file__).parent.joinpath('app')
     os.chdir(pt)
-    app = falcon.App(middleware=[MultipartMiddleware()])
+    app = falcon.App()
     initialize()
     app.add_route('/', MainResource())
     app.add_route('/search', SearchResource())
