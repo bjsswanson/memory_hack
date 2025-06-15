@@ -10,13 +10,13 @@ import zipfile
 from pathlib import Path
 from urllib import request
 
-#run with: powershell -Command "(new-object System.Net.WebClient).DownloadFile('https://github.com/primetime00/memory_hack/raw/master/app/patches/win_install.py','install.py')"
+#run with: powershell -Command "(new-object System.Net.WebClient).DownloadFile('https://github.com/bjsswanson/memory_hack/raw/master/app/patches/win_install.py','install.py')"
 
 cwd = Path(os.getcwd())
 zip_dir_name = 'memory_hack-master'
 
 def download_source():
-    remote_url = 'https://github.com/primetime00/memory_hack/archive/refs/heads/master.zip'
+    remote_url = 'https://github.com/bjsswanson/memory_hack/archive/refs/heads/master.zip'
     # Define the local filename to save data
     local_file = 'master.zip'
     # Download remote and save locally
@@ -24,14 +24,14 @@ def download_source():
     request.urlretrieve(remote_url, local_file)
 
 def download_mem_edit():
-    remote_url = 'https://github.com/primetime00/mem_edit/archive/refs/heads/master.zip'
+    remote_url = 'https://github.com/bjsswanson/mem_edit/archive/refs/heads/master.zip'
     # Define the local filename to save data
     local_file = 'medit.zip'
     # Download remote and save locally
     request.urlretrieve(remote_url, local_file)
 
 def download_nssm():
-    remote_url = 'https://github.com/primetime00/memory_hack/raw/master/app/patches/nssm-2.24.zip'
+    remote_url = 'https://github.com/bjsswanson/memory_hack/raw/master/app/patches/nssm-2.24.zip'
     local_file = 'nssm.zip'
     request.urlretrieve(remote_url, local_file)
 
