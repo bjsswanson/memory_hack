@@ -10,7 +10,7 @@ from app.helpers.exceptions import AOBException
 
 
 class AOBFile():
-    _pattern = re.compile('^Size: (\d+)\s*Offset: (-?[0-9A-F]+)\s*([0-9A-F ?]+)$')
+    _pattern = re.compile(r'^Size: (\d+)\s*Offset: (-?[0-9A-F]+)\s*([0-9A-F ?]+)$')
     smallest_run = 5
     consecutive_wildcards = 5
     header = ['Process: ', 'Name: ', 'Range: ', 'Offset: ', 'Length: ', 'Valid: ']
