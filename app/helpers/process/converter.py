@@ -21,7 +21,7 @@ class BaseConvert:
             self.base_lookup_map[addr] = int(addr, 16)
             return self.base_lookup_map[addr]
 
-        base_data = re.split(':|\+', addr)
+        base_data = re.split(r':|\+', addr)
         base_lk = base_data[0] + ':' + base_data[1]
         if base_lk in self.base_lookup_map:
             self.base_lookup_map[addr] = self.base_lookup_map[base_lk] + int(base_data[2], 16)
